@@ -1,0 +1,64 @@
+.headerInfoContainer {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 30px;
+
+  img {
+    max-height: 200px;
+  }
+}
+
+.bigInput{
+  
+}
+
+.animalContainer {
+  .animal {
+    max-width: 80px;
+    padding: 10px 0 0 0;
+    margin: auto;
+  }
+}
+
+.arInfoContainer {
+  // min-height: 100vh;
+
+  .reverse-column {
+    flex-direction: column-reverse;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .reverse-row {
+    flex-direction: row-reverse;
+  }
+
+  .flex-start {
+    justify-content: flex-start;
+  }
+
+    .infoText {
+      display: flex;
+      font-size: 2em;
+      color: white;
+    }
+
+
+
+    .profileContainer {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+
+    }
+
+  }
+

@@ -1,0 +1,129 @@
+/////////////////// COLOR
+//CLASSES COLOR
+.black {
+  color: black !important;
+}
+
+.white {
+  color: white;
+}
+
+.mainColor {
+  color: #cb9590;
+}
+
+.mainBgColor {
+  background-color: #cb9590;
+}
+//VARIABLES COLOR
+$deepGreen: #1a8000;
+$mediumGreen: #28cc00;
+$lightGreen: #33ff00;
+$red: red;
+$blue: blue;
+$orange: orange;
+
+///////////////////
+
+//VARIABLES
+$mainNav: 50px;
+$small: 0.8rem;
+$medium: 1rem;
+$big: 1.4rem;
+
+//LAYOUT
+*,
+*:focus {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  // margin-top: $mainNav;
+  // background-color: pink;
+  overflow-x: hidden;
+  // width: 100vw;
+
+}
+
+///////////////// FONTS
+
+//////// FONT-SIZE
+.mainContainer {
+  height: 100vh;
+
+}
+
+// .image {
+//     width: 50%;
+// }
+
+.scrollable {
+  overflow-y: scroll;
+}
+
+// SIZES
+.smallFont {
+  font-size: $small;
+}
+
+.mediumFont {
+  font-size: $medium;
+}
+
+.bigFont {
+  font-size: $big;
+}
+
+//FLEX
+.flex {
+  display: flex;
+}
+
+.reverseX {
+  flex-direction: row-reverse;
+}
+
+.reverseY {
+  flex-direction: column-reverse;
+}
+
+//GRID
+.grid {
+  display: grid;
+}
+
+//BUTTON
+.button {
+  min-height: $mainNav;
+  padding: 10px 40px;
+  font-size: $medium;
+
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
+}
+
+//ANIMATION
+.transit {
+  transition: 0.5s ease-in-out;
+}
+
+.rotationRight {
+  transform: rotate(180deg);
+}
+
+.rotationLeft {
+  transform: rotate(-180deg);
+}
+
+.translationLeft {
+  transform: translateX(-100%);
+}
+
+.translationRight {
+  transform: translateX(100%);
+}

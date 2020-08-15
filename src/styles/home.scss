@@ -1,0 +1,21 @@
+@import "./layout.scss";
+
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  
+  .saveTheDateContainer {
+    font-size: 2rem;
+    position: absolute;
+    top: 100vh;
+    background-color: white;
+    padding: 30px 15px;
+    text-align: center;
+    min-width: 300px;
+  }
+
+  .saveTheDate {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5em;
+  }
+}

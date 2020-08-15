@@ -1,0 +1,27 @@
+@import "../layout.scss";
+
+$linkSize: 50px;
+
+#mainNav {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 10;
+  background-color: transparent;
+
+  .linkContainer {
+    align-content: flex-end;
+
+    .imageContainer {
+      transition: all 1s ease-in-out;
+      img {
+        height: 100%;
+        max-width: 100vw;
+      }
+    }
+
+    .logo {
+      height: 200px;
+    }
+  }
+}
