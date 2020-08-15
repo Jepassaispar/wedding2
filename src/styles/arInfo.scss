@@ -1,9 +1,12 @@
+* {
+  font-family: "Baloo Tamma 2", cursive;
+}
+
 .headerInfoContainer {
   width: 100%;
   position: relative;
   z-index: 10;
   background-color: white;
-  font-family: "Dancing Script", cursive;
   text-align: center;
   font-size: 2.5rem;
   padding: 30px;
@@ -13,8 +16,7 @@
   }
 }
 
-.bigInput{
-  
+.bigInput {
 }
 
 .animalContainer {
@@ -44,21 +46,20 @@
     justify-content: flex-start;
   }
 
-    .infoText {
-      display: flex;
-      font-size: 2em;
-      color: white;
-    }
-
-
-
-    .profileContainer {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-
-
-    }
-
+  .infoText {
+    display: flex;
+    font-size: 2em;
+    color: white;
   }
 
+  .profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.precisions {
+  margin: 20px auto;
+  max-width: 1000px;
+}

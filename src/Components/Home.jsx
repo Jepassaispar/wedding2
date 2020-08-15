@@ -28,7 +28,7 @@ const Home = () => {
           background: `center top url(${bgImage})`,
         }}
       >
-        <Paper className="saveTheDateContainer mainColor">
+        <Paper className="saveTheDateContainer mainColor" style={{padding: "25px 5%"}}>
           <span className="saveTheDate" elevation={3}>
             Save the date :
           </span>

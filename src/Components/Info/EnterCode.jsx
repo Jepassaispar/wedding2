@@ -7,7 +7,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const EnterCode = ({ value, onClick, onChange }) => {
+const EnterCode = ({ value, onClick, onChange, events }) => {
   const [errorMessage, setErrorMessage] = useState("");
   return (
     <>
