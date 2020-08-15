@@ -218,7 +218,8 @@ const InfoContainer = () => {
 
           <h3>4. Dois-je respecter un dresscode ?</h3>
           <span className="precisions">
-          Non, pas de dresscode alors venez comme vous êtes !</span>
+            Non, pas de dresscode alors venez comme vous êtes !
+          </span>
         </Paper>
       ) : (
         ""
@@ -270,7 +271,8 @@ const InfoContainer = () => {
 
           <h3>5. Dois-je respecter un dresscode ?</h3>
           <span className="precisions">
-          Non, pas de dresscode alors venez comme vous êtes !</span>
+            Non, pas de dresscode alors venez comme vous êtes !
+          </span>
         </Paper>
       ) : (
         ""
@@ -312,7 +314,8 @@ const InfoContainer = () => {
 
           <h3>5. Dois-je respecter un dresscode ?</h3>
           <span className="precisions">
-          Non, pas de dresscode alors venez comme vous êtes !</span>
+            Non, pas de dresscode alors venez comme vous êtes !
+          </span>
         </Paper>
       ) : (
         ""

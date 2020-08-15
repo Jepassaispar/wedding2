@@ -1,5 +1,6 @@
 import axios from "axios";
-export const BACKEND_URL = "https://babouche.herokuapp.com";
+// export const BACKEND_URL = "https://babouche.herokuapp.com";
+export const BACKEND_URL = "http://localhost:3500";
 
 export async function getInputs(code) {
   try {
