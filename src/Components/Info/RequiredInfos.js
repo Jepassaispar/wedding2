@@ -28,7 +28,7 @@ export default function RequiredInfos({ value, onChange }) {
         options={presence}
         disableCloseOnSelect
         renderInput={(params) => (
-          <TextField {...params} label="Je serais" variant="outlined" />
+          <TextField {...params} label="Je serai" variant="outlined" />
         )}
         renderOption={(option) => option}
         onChange={(e, value) => {
