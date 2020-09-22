@@ -28,12 +28,15 @@ const Home = () => {
           background: `center top url(${bgImage})`,
         }}
       >
-        <Paper className="saveTheDateContainer mainColor" style={{padding: "25px 5%"}}>
+        <Paper
+          className="saveTheDateContainer mainColor"
+          style={{ padding: "25px 5%" }}
+        >
           <span className="saveTheDate" elevation={3}>
-            Save the date :
+            Save the <span style={{ display: "inline-block" }}>date :</span>
           </span>
           <br />
-          <Countdown date={"2021-07-07"} daysInHours renderer={renderer} />,
+          <Countdown date={"2021-07-08"} daysInHours renderer={renderer} />
         </Paper>
       </div>
     </>

@@ -20,17 +20,14 @@ const Event3 = ({ value, onChange }) => {
         options={presence}
         disableCloseOnSelect
         renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Je confirme ma présence au brunch du lendemain"
-            variant="outlined"
-          />
+          <>
+            <TextField {...params} label="au brunch du lendemain" variant="outlined" />
+          </>
         )}
         renderOption={(option) => option}
         onChange={(e, inputValue) => {
           const newValue = value;
-          newValue["brunch"] =
-            inputValue === "oui" ? true : false;
+          newValue["brunch"] = inputValue === "oui" ? true : false;
           onChange(newValue);
         }}
       />

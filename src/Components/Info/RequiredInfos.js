@@ -12,7 +12,7 @@ const presence = [
 
 export default function RequiredInfos({ value, onChange }) {
   const [jeserais, setJeserais] = useState("");
-
+  const [nombreDenfants, setNombreDenfants] = useState(0);
   return (
     <>
       <Autocomplete
@@ -28,7 +28,7 @@ export default function RequiredInfos({ value, onChange }) {
         options={presence}
         disableCloseOnSelect
         renderInput={(params) => (
-          <TextField {...params} label="Je serai" variant="outlined" />
+          <TextField {...params} label="Je serai..." variant="outlined" />
         )}
         renderOption={(option) => option}
         onChange={(e, value) => {
@@ -192,12 +192,292 @@ export default function RequiredInfos({ value, onChange }) {
             required
             type="number"
             placeholder="nombre d'enfants"
+            inputProps={{ min: "0", max: "5", step: "1" }}
             onChange={(e) => {
               const newValue = value;
-              newValue.requiredInfos.enfants = e.target.value;
+              newValue.requiredInfos.enfants = [];
+              for (let i = 0; i <= Number(e.target.value); i++) {
+                newValue.requiredInfos.enfants.push({
+                  nom: "",
+                  prénom: "",
+                  age: 0,
+                });
+              }
               onChange(newValue);
+              setNombreDenfants(e.target.value);
             }}
           ></Input>
+          {/* //NOMBRE D'ENFANTS */}
+          {nombreDenfants >= 1 && (
+            <>
+              <TextField
+                variant="outlined"
+                required
+                label="Nom enfant 1"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[0].nom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <TextField
+                variant="outlined"
+                required
+                label="Prénom enfant 1"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[0].prénom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <Input
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                }}
+                required
+                type="number"
+                placeholder="Age enfant 1"
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[0].age =
+                    Number(e.target.value) || 0;
+                  onChange(newValue);
+                }}
+              ></Input>
+            </>
+          )}
+          {nombreDenfants >= 2 && (
+            <>
+              <TextField
+                variant="outlined"
+                required
+                label="Nom enfant 2"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[1].nom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <TextField
+                variant="outlined"
+                required
+                label="Prénom enfant 2"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[1].prénom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <Input
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                }}
+                required
+                type="number"
+                placeholder="Age enfant 2"
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[1].age =
+                    Number(e.target.value) || 0;
+                  onChange(newValue);
+                }}
+              ></Input>
+            </>
+          )}
+          {nombreDenfants >= 3 && (
+            <>
+              <TextField
+                variant="outlined"
+                required
+                label="Nom enfant 3"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[2].nom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <TextField
+                variant="outlined"
+                required
+                label="Prénom enfant 3"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[2].prénom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <Input
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                }}
+                required
+                type="number"
+                placeholder="Age enfant 3"
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[2].age =
+                    Number(e.target.value) || 0;
+                  onChange(newValue);
+                }}
+              ></Input>
+            </>
+          )}
+          {nombreDenfants >= 4 && (
+            <>
+              <TextField
+                variant="outlined"
+                required
+                label="Nom enfant 4"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[3].nom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <TextField
+                variant="outlined"
+                required
+                label="Prénom enfant 4"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[3].prénom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <Input
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                }}
+                required
+                type="number"
+                placeholder="Age enfant 4"
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[3].age =
+                    Number(e.target.value) || 0;
+                  onChange(newValue);
+                }}
+              ></Input>
+            </>
+          )}
+          {nombreDenfants >= 5 && (
+            <>
+              <TextField
+                variant="outlined"
+                required
+                label="Nom enfant 5"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[4].nom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <TextField
+                variant="outlined"
+                required
+                label="Prénom enfant 5"
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  paddingBottom: "10px",
+                }}
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[4].prénom = e.target.value;
+                  onChange(newValue);
+                }}
+              ></TextField>
+              <Input
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                }}
+                required
+                type="number"
+                placeholder="Age enfant 5"
+                onChange={(e) => {
+                  const newValue = value;
+                  newValue.requiredInfos.enfants[4].age =
+                    Number(e.target.value) || 0;
+                  onChange(newValue);
+                }}
+              ></Input>
+            </>
+          )}
         </>
       )}
     </>

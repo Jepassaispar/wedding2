@@ -3,15 +3,17 @@
 .homeContainer {
   display: flex;
   justify-content: center;
-  
+
   .saveTheDateContainer {
+      font-family: "Great Vibes";
     font-size: 2rem;
     position: absolute;
     top: 100vh;
-    background-color: white;
+    background-color: black;
     padding: 30px 15px;
     text-align: center;
     min-width: 300px;
+    color: white;
   }
 
   .saveTheDate {

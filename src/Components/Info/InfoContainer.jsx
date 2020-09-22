@@ -4,7 +4,7 @@ import bgImage from "../../public/Aliz-Rémi-mountains.jpg";
 import drawing from "../../public/drawing.PNG";
 import localisation from "../../public/localisation.PNG";
 import Paper from "@material-ui/core/Paper";
-import { Button } from "@material-ui/core";
+import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import { sendData } from "../../services/API";
 import Event1 from "./Event1";
 import Event2 from "./Event2";
@@ -32,13 +32,19 @@ const InfoContainer = () => {
         nom: "",
         prénom: "",
       },
-      enfants: 0,
+      enfants: [],
       email: "",
       téléphone: "",
+    },
+    menus: {
+      adultes: 0,
+      végétariens: 0,
+      enfants: 0,
     },
     "cérémonie&cocktail": false,
     réception: false,
     brunch: false,
+    commentaires: "",
   });
 
   return (
@@ -49,32 +55,35 @@ const InfoContainer = () => {
         Rémi et Alizée vous invitent à leur mariage le 8 juillet 2021
       </Paper>
       <div
-        className="drawing_container"
         style={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
       >
-        <img
-          className="drawing"
-          style={{ width: "100%", maxWidth: "600px" }}
-          src={localisation}
-          alt="localisation"
-        ></img>
-        <img
-          className="drawing"
-          src={drawing}
-          style={{ width: "100%", maxWidth: "600px" }}
-          alt="drawing"
-        ></img>
+        <div style={{ width: "100%", maxWidth: "600px" }}>
+          <img
+            className="drawing"
+            style={{ width: "100%" }}
+            src={localisation}
+            alt="localisation"
+          ></img>
+        </div>
+        <div style={{ width: "100%", maxWidth: "600px" }}>
+          <img
+            className="drawing"
+            src={drawing}
+            style={{ width: "100%" }}
+            alt="drawing"
+          ></img>
+        </div>
       </div>
       <div
         className="arInfoContainer"
         style={{
           background: `center url(${bgImage})`,
           backgroundPosition: "52%",
-          height: "270vh",
+          height: "285vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -82,7 +91,7 @@ const InfoContainer = () => {
       >
         <div
           style={{
-            marginTop: "1000px",
+            marginTop: "1100px",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -114,9 +123,11 @@ const InfoContainer = () => {
                 events={events}
               />
             )}
-
             {events.length > 0 && !successMessage && (
               <RequiredInfos value={infos} onChange={(e) => setInfos(e)} />
+            )}
+            {events.length > 0 && !successMessage && (
+              <span style={{ marginTop: "15px" }}>Je confirme ma présence</span>
             )}
             {events.length > 0 && !successMessage && (
               <Event1 value={infos} onChange={(e) => setInfos(e)} />
@@ -127,6 +138,80 @@ const InfoContainer = () => {
             {events.length > 2 && !successMessage && (
               <Event3 value={infos} onChange={(e) => setInfos(e)} />
             )}
+            {events.length > 1 && !successMessage && (
+              <>
+                <span style={{ marginTop: "35px" }}>Nombre de menus</span>
+                <Input
+                  style={{
+                    minWidth: "250px",
+                    width: "100%",
+                    backgroundColor: "white",
+                    minHeight: "45px",
+                    marginBottom: "8px",
+                  }}
+                  required
+                  type="number"
+                  placeholder="adultes"
+                  inputProps={{ min: "0", max: "5", step: "1" }}
+                  onChange={(e) => {
+                    const newValue = infos;
+                    newValue.menus.adultes = e.target.value;
+                    setInfos(newValue);
+                  }}
+                ></Input>
+                <Input
+                  style={{
+                    minWidth: "250px",
+                    width: "100%",
+                    backgroundColor: "white",
+                    minHeight: "45px",
+                    marginBottom: "8px",
+                  }}
+                  required
+                  type="number"
+                  placeholder="végétariens"
+                  inputProps={{ min: "0", max: "5", step: "1" }}
+                  onChange={(e) => {
+                    const newValue = infos;
+                    newValue.menus.végétariens = e.target.value;
+                    setInfos(newValue);
+                  }}
+                ></Input>
+                <Input
+                  style={{
+                    minWidth: "250px",
+                    width: "100%",
+                    backgroundColor: "white",
+                    minHeight: "45px",
+                    marginBottom: "8px",
+                  }}
+                  required
+                  type="number"
+                  placeholder="enfants"
+                  inputProps={{ min: "0", max: "5", step: "1" }}
+                  onChange={(e) => {
+                    const newValue = infos;
+                    newValue.menus.enfants = e.target.value;
+                    setInfos(newValue);
+                  }}
+                ></Input>
+              </>
+            )}
+
+            {events.length !== 0 && !successMessage && (
+              <TextareaAutosize
+                style={{
+                  minWidth: "250px",
+                  width: "100%",
+                  backgroundColor: "white",
+                  minHeight: "45px",
+                  marginBottom: "8px",
+                  padding: "10px"
+                }}
+                placeholder="Commentaires"
+              ></TextareaAutosize>
+            )}
+
             {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
             {successMessage && (
               <Alert severity="success">{successMessage}</Alert>
@@ -143,6 +228,9 @@ const InfoContainer = () => {
                 <Button
                   variant="contained"
                   color="primary"
+                  style={{
+                    fontFamily: "Raleway",
+                  }}
                   onClick={async () => {
                     try {
                       const dataToSend = {

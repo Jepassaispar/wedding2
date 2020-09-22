@@ -37,6 +37,9 @@ const EnterCode = ({ value, onClick, onChange, events }) => {
         <Button
           variant="contained"
           color="primary"
+          style={{
+            fontFamily: "Raleway"
+          }}
           onClick={async () => {
             try {
               const code = await getInputs(value);

@@ -9,11 +9,11 @@ const Event2 = ({ value, onChange }) => {
     <Autocomplete
       className="bigInput"
       style={{
-          width: "100%",
-          minWidth: "200px",
-          zIndex: 0,
-          marginTop: "10px",
-        }}
+        width: "100%",
+        minWidth: "200px",
+        zIndex: 0,
+        marginTop: "10px",
+      }}
       getOptionLabel={(option) => option}
       getOptionSelected={(option, { value }) => option === value}
       options={presence}
@@ -21,7 +21,8 @@ const Event2 = ({ value, onChange }) => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Je confirme ma présence à la réception qui se tiendra après la cérémonie & le cocktail"
+          label="à la réception après la
+          cérémonie"
           variant="outlined"
         />
       )}
