@@ -206,9 +206,14 @@ const InfoContainer = () => {
                   backgroundColor: "white",
                   minHeight: "45px",
                   marginBottom: "8px",
-                  padding: "10px"
+                  padding: "10px",
                 }}
                 placeholder="Commentaires"
+                onChange={(e) => {
+                  const newValue = infos;
+                  newValue.commentaires = e.target.value;
+                  setInfos(newValue);
+                }}
               ></TextareaAutosize>
             )}
 
