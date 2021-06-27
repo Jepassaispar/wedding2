@@ -38,6 +38,13 @@ const Home = () => {
           <br />
           <Countdown date={"2021-07-08"} daysInHours renderer={renderer} />
         </Paper>
+        <Paper className="lastInfosContainer mainColor">
+          <div>
+            Célébration du Mariage à 15h00 en l'Eglise Saint-Germain-l'Auxerrois
+            à Fontenay-sous-Bois.
+          </div>{" "}
+          <span> Cocktail et réception à 18h00 à Mantes-La-Jolie</span>
+        </Paper>
       </div>
     </>
   );
